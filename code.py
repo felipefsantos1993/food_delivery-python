@@ -1,4 +1,7 @@
-print("""
+import os
+
+def show_program_name():
+    print("""
 ░██╗░░░░░░░██╗███████╗██╗░░░░░░█████╗░░█████╗░███╗░░░███╗███████╗██╗
 ░██║░░██╗░░██║██╔════╝██║░░░░░██╔══██╗██╔══██╗████╗░████║██╔════╝██║
 ░╚██╗████╗██╔╝█████╗░░██║░░░░░██║░░╚═╝██║░░██║██╔████╔██║█████╗░░██║
@@ -7,10 +10,32 @@ print("""
 ░░░╚═╝░░░╚═╝░░╚══════╝╚══════╝░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚══════╝╚═╝
 """)
 
-print('1. Register Restaurant')
-print('2. List Restaurant')
-print('3. Actve Restaurant')
-print('4. Logout')
+def show_program_options():
+    print('1. Register Restaurant')
+    print('2. List Restaurant')
+    print('3. Actve Restaurant')
+    print('4. Logout')
 
-option = input(f'Choose your option: ')
-print(f'You have chosen {option}')
+def stop_app():
+    os.system('cls')
+    print('The program has been finished...\n')
+
+def choose_option():
+    option = int(input(f'Choose your option: '))
+    #print(f'You have chosen {option}')
+    if option == 1:
+        print(f'You have chosen: Register Restaurant')
+    elif option == 2:
+        print('You have chosen: List Restaurant')
+    elif option == 3:
+        print('You have chosen: Active Restaurant')
+    else:
+        stop_app()
+
+def main():
+    show_program_name()
+    show_program_options()4
+    choose_option()
+
+if __name__ == '__main__':
+    main()
