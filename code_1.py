@@ -34,7 +34,7 @@ def choose_option():
 
 def main():
     show_program_name()
-    show_program_options()4
+    show_program_options()
     choose_option()
 
 if __name__ == '__main__':
