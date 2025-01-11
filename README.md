@@ -1,3 +1,3 @@
 # food_delivery-python
-This is my food delivery application project using Python program language to back-end development.
+### This is my food delivery application project using Python programming language for back-end development.
 ![alt text](image.png)
