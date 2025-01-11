@@ -21,7 +21,7 @@ def stop_app():
     print('The program has been finished...\n')
 
 def choose_option():
-    option = int(input(f'Choose your option: '))
+    option = int(input(f'Choose your option:\n'))
     #print(f'You have chosen {option}')
     if option == 1:
         print(f'You have chosen: Register Restaurant')
@@ -32,25 +32,23 @@ def choose_option():
     else:
         stop_app()
 
-def choose_option_match():
-    option = int(input(f'Choose your option:'))
-    #print(f'You have chosen {option}')
-    match option:
-        case 1:
-            print(f'You have chosen: Register Restaurant')
-        case 2:
-            print('You have chosen: List Restaurant')
-        case 3:
-            print('You have chosen: Active Restaurant')
-        case _:
-            print(f'...')
-
-
+#def choose_option_match():
+#    option = int(input(f'Choose your option:\n'))
+#    #print(f'You have chosen {option}')
+#    match option:
+#        case 1:
+#            print(f'You have chosen: Register Restaurant')
+#        case 2:
+#            print('You have chosen: List Restaurant')
+#        case 3:
+#            print('You have chosen: Active Restaurant')
+#        case _:
+#            print(f'...')
 
 def main():
     show_program_name()
     show_program_options()
-    choose_option_match()
+    choose_option()
 
 if __name__ == '__main__':
     main()
