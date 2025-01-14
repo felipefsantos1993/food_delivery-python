@@ -1,5 +1,7 @@
 import os
 
+restaurants = []
+
 def show_program_name():
     print("""
 ░██╗░░░░░░░██╗███████╗██╗░░░░░░█████╗░░█████╗░███╗░░░███╗███████╗██╗
@@ -11,26 +13,35 @@ def show_program_name():
 """)
 
 def show_program_options():
-    print('1. Register Restaurant')
-    print('2. List Restaurant')
-    print('3. Actve Restaurant')
-    print('4. Logout')
+    print('1. Restaurant Register')
+    print('2. Restaurant List')
+    print('3. Restaurant Actve')
+    print('4. Logout\n')
 
 def stop_app():
     os.system('cls')
-    print('The program has been finished...\n')
+    print('The program has been finished...')
 
 def invalid_option():
-    input('Press any button to return...')
+    input('Press any button to return the mainly menu...\n')
     os.system('cls')
+    main()
+
+def restaurant_register():
+    os.system('cls')
+    print('New Restaurants\n')
+    rn = input('What is the restaurant name?\n')
+    restaurants.append(rn)
+    print(f'The restaurant {rn} has been registered!\n\n\n')
+    input('Press any button to return the mainly menu...\n')
     main()
 
 def choose_option():
     try:
         option = int(input(f'Choose your option:\n'))
-        #print(f'You have chosen {option}')
+        #print(f'You have chosen {option}')1
         if option == 1:
-            print(f'You have chosen: Register Restaurant')
+            restaurant_register()
         elif option == 2:
             print('You have chosen: List Restaurant')
         elif option == 3:
