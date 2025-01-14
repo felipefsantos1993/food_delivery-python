@@ -19,22 +19,34 @@ def show_program_options():
     print('4. Logout\n')
 
 def stop_app():
+    clean_subtitles('The program has been finished...')
+    #back_to_mainly_menu()
+
+def clean_subtitles(subtitle):
     os.system('cls')
-    print('The program has been finished...')
+    print(subtitle)
+    print()
+
+def back_to_mainly_menu():
+    input('\n\n\nPress any button to return the mainly menu...\n')
+    main()
 
 def invalid_option():
-    input('Press any button to return the mainly menu...\n')
-    os.system('cls')
+    print('Invalid option!!!')
     main()
 
 def restaurant_register():
-    os.system('cls')
-    print('New Restaurants\n')
+    clean_subtitles('New Restaurants')
     rn = input('What is the restaurant name?\n')
     restaurants.append(rn)
-    print(f'The restaurant {rn} has been registered!\n\n\n')
-    input('Press any button to return the mainly menu...\n')
-    main()
+    print(f'The restaurant {rn} has been registered!')
+    back_to_mainly_menu()
+
+def restaurant_list():
+    clean_subtitles('List Of Restaurants')
+    for r in restaurants:
+        print(r)
+    back_to_mainly_menu()
 
 def choose_option():
     try:
@@ -43,7 +55,7 @@ def choose_option():
         if option == 1:
             restaurant_register()
         elif option == 2:
-            print('You have chosen: List Restaurant')
+            restaurant_list()
         elif option == 3:
             print('You have chosen: Active Restaurant')
         elif option == 4:
