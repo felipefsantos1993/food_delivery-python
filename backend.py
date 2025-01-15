@@ -1,6 +1,7 @@
 import os
 
-restaurants = []
+restaurants = [{'nome':'Sushi Bar', 'categoria':'japonesa', 'ativo':False},
+               {'nome':'Super Burger', 'categoria':'fast food', 'ativo':True}]
 
 def show_program_name():
     print("""
@@ -45,7 +46,10 @@ def restaurant_register():
 def restaurant_list():
     clean_subtitles('List Of Restaurants')
     for r in restaurants:
-        print(r)
+        name = restaurants['nome']
+        category = restaurants['categoria']
+        active = restaurants['ativo']
+        print(f'{name} | {category} | {active}')
     back_to_mainly_menu()
 
 def choose_option():
