@@ -1,7 +1,8 @@
 import os
 
 restaurants = [{'nome':'Sushi Bar', 'categoria':'japonesa', 'ativo':False},
-               {'nome':'Super Burger', 'categoria':'fast food', 'ativo':True}]
+               {'nome':'Super Burger', 'categoria':'fast food', 'ativo':True},
+               {'nome':'Cantina da Nona', 'categoria':'italiana', 'ativo':True}]
 
 def show_program_name():
     print("""
