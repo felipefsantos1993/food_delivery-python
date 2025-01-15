@@ -46,9 +46,9 @@ def restaurant_register():
 def restaurant_list():
     clean_subtitles('List Of Restaurants')
     for r in restaurants:
-        name = restaurants['nome']
-        category = restaurants['categoria']
-        active = restaurants['ativo']
+        name = r['nome']
+        category = r['categoria']
+        active = r['ativo']
         print(f'{name} | {category} | {active}')
     back_to_mainly_menu()
 
