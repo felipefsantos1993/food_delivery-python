@@ -1,6 +1,7 @@
 import os
 
-restaurants = []
+restaurants = [{'name':'Super Burger', 'category':'fast food', 'active':False},
+               {'name':'Sushi Bar', 'category':'japanese', 'active':False}]
 
 def show_program_name():
     print("""
