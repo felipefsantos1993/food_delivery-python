@@ -1,7 +1,7 @@
 import os
 
-restaurants = [{'name':'Super Burger', 'category':'fast food', 'active':False},
-               {'name':'Sushi Bar', 'category':'japanese', 'active':False}]
+restaurants = [{'name':'Super Burger', 'category':'fast food', 'status':False},
+               {'name':'Sushi Bar', 'category':'japanese', 'status':False}]
 
 def show_program_name():
     print("""
@@ -14,10 +14,10 @@ def show_program_name():
 """)
 
 def show_program_options():
-    print('1. Restaurant Registration')
-    print('2. Restaurant List')
-    print('3. Restaurant Status')
-    print('4. Logout\n')
+    print('1. RESTAURANT REGISTRATION')
+    print('2. RESTAURANT LIST')
+    print('3. RESTAURANT STATUS')
+    print('4. LOGOUT\n')
 
 def stop_app():
     clean_subtitles('The program has been closed...')
@@ -25,7 +25,10 @@ def stop_app():
 
 def clean_subtitles(subtitle):
     os.system('cls')
+    text = '=' * len(subtitle)
+    print(text)
     print(subtitle)
+    print(text)
     print()
 
 def back_to_the_mainly_menu():
@@ -37,32 +40,39 @@ def invalid_option():
     main()
 
 def restaurant_registration():
-    clean_subtitles('New Restaurant')
+    '''This function does...
+    INPUTS:
+    - name
+    
+    '''
+    clean_subtitles('NEW RESTAURANT')
     rn = input('What is the restaurant name?\n')
     rc = input('Whats is the restaurant category?\n')
-    restaurants_data = {'name':rn, 'category': rc, 'active': False}
+    restaurants_data = {'name':rn, 'category': rc, 'status': False}
     restaurants.append(restaurants_data)
     print(f'\nThe restaurant {rn} has been registered!')
     back_to_the_mainly_menu()
 
 def restaurant_list():
-    clean_subtitles('List Of Restaurants')
+    clean_subtitles('LIST OF RESTAURANTS')
+    header = f'{'NAME'.ljust(20)} | {'CATEGORY'.ljust(20)} | {'STATUS'.ljust(20)}'
+    print(f'{header}\n')
     for r in restaurants:
         name = r['name']
         category = r['category']
-        active = r['active']
-        print(f'{name} | {category} | {active}')
+        status = 'active' if r['status'] else 'deactive'
+        print(f'{name.ljust(20)} | {category.ljust(20)} | {status.ljust(20)}')
     back_to_the_mainly_menu()
 
 def restaurant_status():
-    clean_subtitles('Insert the name of restaurant...')
+    clean_subtitles('RESTAURANT STATUS')
     ra = input('Which restaurant would you like to change the status?\n')
     validation = False
     for r in restaurants:
         if r['name'] == ra:
             validation = not validation
             r['active'] = not r['active']
-            message = f'\nThe restaurant {ra} has been activated!' if r['active'] else f'\nThe restaurant {ra} has been disabled!'
+            message = f'\nThe restaurant {ra} has been activated!' if r['active'] else f'\nThe restaurant {ra} has been deactivated!'
             print(message)
     if not validation:
         print(f'\nThe restaurant {ra} has not benn found!')
