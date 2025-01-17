@@ -38,16 +38,18 @@ def invalid_option():
 def restaurant_register():
     clean_subtitles('New Restaurants')
     rn = input('What is the restaurant name?\n')
-    restaurants.append(rn)
-    print(f'The restaurant {rn} has been registered!')
+    rc = input('Whats is the restaurant category?\n')
+    restaurants_data = {'name':rn, 'category': rc, 'active': False}
+    restaurants.append(restaurants_data)
+    print(f'\nThe restaurant {rn} has been registered!')
     back_to_mainly_menu()
 
 def restaurant_list():
     clean_subtitles('List Of Restaurants')
     for r in restaurants:
-        name = r['nome']
-        category = r['categoria']
-        active = r['ativo']
+        name = r['name']
+        category = r['category']
+        active = r['active']
         print(f'{name} | {category} | {active}')
     back_to_mainly_menu()
 
