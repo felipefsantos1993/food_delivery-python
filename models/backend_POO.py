@@ -18,20 +18,36 @@ musica3.nome = 'Shape of You'
 musica3.artista = 'Ed Sheeran'
 musica3.duracao = 234
 
-#"self" can be any word
+
+
 class Restaurants:
+# "self" can be any word
+
     restaurant = []
+
     def __init__(self, name, category):
-        self.name = name
-        self.category = category
-        self.status = False
+        self._name = name.title()
+        self._category = category.upper()
+        self._status = False
         Restaurants.restaurant.append(self)
 
     def __str__(self):
-        return f'{self.name} | {self.category}'
-    def restaurant_list():
-        for r in Restaurants.restaurant:
-            print(f'{r.name} | {r.category} | {r.status}')
+        return f'{self._name} | {self._category}'
     
-super_burger = Restaurants('Super Burger', 'Fast Food')
+    @classmethod
+    def restaurant_list(cls):
+        print(f'{'name'.ljust(25)} | {'category'.ljust(25)} | {'status'}')
+        for r in cls.restaurant:
+            print(f'{r._name.ljust(25)} | {r._category.ljust(25)} | {r.status}')
+
+    @property
+    def status(self):
+        return 'active' if self._status else 'deactive'
+    
+    def restaurant_status(self):
+        self._status = not self._status
+    
+super_burger = Restaurants('super burger', 'fast food')
+super_burger.restaurant_status()
+
 Restaurants.restaurant_list()
