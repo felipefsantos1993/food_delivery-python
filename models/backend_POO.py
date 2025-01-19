@@ -38,16 +38,16 @@ class Restaurants:
     def restaurant_list(cls):
         print(f'{'name'.ljust(25)} | {'category'.ljust(25)} | {'status'}')
         for r in cls.restaurant:
-            print(f'{r._name.ljust(25)} | {r._category.ljust(25)} | {r.status}')
+            print(f'{r._name.ljust(25)} | {r._category.ljust(25)} | {r.restaurant_status}')
 
     @property
-    def status(self):
+    def restaurant_status(self):
         return 'active' if self._status else 'deactive'
     
-    def restaurant_status(self):
+    def change_restaurant_status(self):
         self._status = not self._status
     
 super_burger = Restaurants('super burger', 'fast food')
-super_burger.restaurant_status()
+super_burger.change_restaurant_status()
 
 Restaurants.restaurant_list()
