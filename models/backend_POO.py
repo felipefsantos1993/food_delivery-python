@@ -42,7 +42,7 @@ class Restaurants:
 
     @property
     def restaurant_status(self):
-        return 'active' if self._status else 'deactive'
+        return '✔' if self._status else '✘'
     
     def change_restaurant_status(self):
         self._status = not self._status
