@@ -23,9 +23,3 @@ class Restaurants:
     
     def change_restaurant_status(self):
         self._status = not self._status
-    
-super_burger = Restaurants('super burger', 'fast food')
-pizza_supreme = Restaurants('PIZZA supreme', 'ItaliAN')
-super_burger.change_restaurant_status()
-
-Restaurants.restaurant_list()
