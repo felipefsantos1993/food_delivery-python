@@ -1,4 +1,4 @@
-from models.backend_POO import Restaurants
+from models.restaurants import Restaurants
 
 super_burger = Restaurants('Super Burger', 'Fast Food')
 hot_chili_peppers = Restaurants('Hot Chili Peppers', 'Mexican')
