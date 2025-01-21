@@ -2,7 +2,7 @@ class Restaurants:
 
     restaurant = []
 
-    def __init__(self, name, category): # "self" can be any word.
+    def __init__(self, name, category): # "self" can be any word...
         self._name = name.title()
         self._category = category.upper()
         self._status = False
