@@ -1,3 +1,5 @@
+from models.assessments import Assessments
+
 class Restaurants:
 
     restaurant = []
@@ -6,6 +8,7 @@ class Restaurants:
         self._name = name.title()
         self._category = category.upper()
         self._status = False
+        self._assessment = []
         Restaurants.restaurant.append(self)
 
     def __str__(self):
@@ -13,9 +16,9 @@ class Restaurants:
     
     @classmethod
     def restaurant_list(cls):
-        print(f'{'name'.ljust(25)} | {'category'.ljust(25)} | {'status'}')
+        print(f'{'name'.ljust(25)} | {'category'.ljust(25)} | {'assessment'.ljust(25)} | {'status'}')
         for r in cls.restaurant:
-            print(f'{r._name.ljust(25)} | {r._category.ljust(25)} | {r.restaurant_status}')
+            print(f'{r._name.ljust(25)} | {r._category.ljust(25)} | {str(r.grade_avg).ljust(25)} | {r.restaurant_status}')
 
     @property
     def restaurant_status(self):
@@ -23,3 +26,16 @@ class Restaurants:
     
     def change_restaurant_status(self):
         self._status = not self._status
+
+    def get_assesment(self, customer, grade):
+        assessment = Assessments(customer, grade)
+        self._assessment.append(assessment)
+
+    @property
+    def grade_avg(self):
+        if not self._assessment:
+            return 0
+        s = sum(assessment._grade for assessment in self._assessment)
+        c = len(self._assessment)
+        a = round(s / c, 1)
+        return a
