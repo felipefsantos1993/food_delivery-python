@@ -31,7 +31,7 @@ class Restaurants:
     def get_assesment(self, customer, grade):
         assessment = Assessments(customer, grade)
         self._assessment.append(assessment)
-        #
+        # replace in "grade_avg"
         #if 0 < grade <= 5:
         #    a = Assessments(customer, grade)
         #    self._assessment.append(a)
