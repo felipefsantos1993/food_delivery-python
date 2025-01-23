@@ -1,6 +1,7 @@
 from models.assessments import Assessments
 
 class Restaurants:
+    """..."""
 
     restaurant = []
 
@@ -30,12 +31,16 @@ class Restaurants:
     def get_assesment(self, customer, grade):
         assessment = Assessments(customer, grade)
         self._assessment.append(assessment)
+        #
+        #if 0 < grade <= 5:
+        #    a = Assessments(customer, grade)
+        #    self._assessment.append(a)
 
     @property
     def grade_avg(self):
         if not self._assessment:
-            return 0
+            return 'not assessments!'
         s = sum(assessment._grade for assessment in self._assessment)
         c = len(self._assessment)
-        a = round(s / c, 1)
+        a = 5.0 if round(s / c, 1) >= 5.0 else round(s / c, 1)
         return a

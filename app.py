@@ -2,9 +2,9 @@ from models.restaurants import Restaurants
 from models.assessments import Assessments
 
 super_burger = Restaurants('Super Burger', 'Fast Food')
-super_burger.get_assesment('Felipe', 10)
-super_burger.get_assesment('Manu', 6)
-super_burger.get_assesment('Lu', 3)
+super_burger.get_assesment('Felipe', 5)
+super_burger.get_assesment('Manu', 5)
+super_burger.get_assesment('Lu', 4.5)
 
 
 
