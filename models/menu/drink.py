@@ -1,3 +1,6 @@
-class Drink:
+from models.menu.item import Item
+
+class Drink(Item):
     def __init__(self, name, price, size):
-        pass
+        super().__dir__(name, price)
+        self._size = size
