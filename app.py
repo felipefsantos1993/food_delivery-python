@@ -2,11 +2,11 @@ from models.restaurants import Restaurants
 from models.assessments import Assessments
 from models.menu.food import Food
 from models.menu.drink import Drink
+from models.menu.item import Item
 
 super_burger = Restaurants('Super Burger', 'Fast Food')
-orange_juice = Drink('Orange Juice', 10.50, 'M')
-hamburger = Food('Hamburger', 35.20, 'A delicius hamburger...')
-
+orange_juice = Drink('Orange Juice', 2.00, 'M')
+hamburger = Food('Hamburger', 10.00, 'The best hamburger of the town...')
 
 
 
@@ -21,7 +21,8 @@ hamburger = Food('Hamburger', 35.20, 'A delicius hamburger...')
 
 
 def main():
-    pass
+    print(orange_juice)
+    print(hamburger)
 
 if __name__ == '__main__':
     main()
