@@ -10,6 +10,7 @@ class Restaurants:
         self._category = category.upper()
         self._status = False
         self._assessment = []
+        self._menu = []
         Restaurants.restaurant.append(self)
 
     def __str__(self):
@@ -44,3 +45,13 @@ class Restaurants:
         c = len(self._assessment)
         a = 5.0 if round(s / c, 1) >= 5.0 else round(s / c, 1)
         return a
+    
+    # def get_drink_on_menu(self, drink):
+    #     self._menu.append(drink)
+
+    # def get_food_on_menu(self, food):
+    #     self._menu.append(food)
+
+    def add_menu(sel):
+        pass
+
