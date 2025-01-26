@@ -46,14 +46,20 @@ class Restaurants:
         c = len(self._assessment)
         a = 5.0 if round(s / c, 1) >= 5.0 else round(s / c, 1)
         return a
-    
-    # def get_drink_on_menu(self, drink):
-    #     self._menu.append(drink)
-
-    # def get_food_on_menu(self, food):
-    #     self._menu.append(food)
 
     def add_menu(self, item):
         if isinstance(item, Item):
             self._menu.append(item)
+    
+    @property
+    def menu_list(self):
+        print(f'{self._name} menu:\n')
+        for i, item in enumerate(self._menu, start=1):
+            if hasattr(item, 'description'):
+                food_msg = f'{i}. {item._name} | {item._price} | {item.description}'
+                print(food_msg)
+            else:
+                drink_msg = f'{i}. {item._name} | {item._price} | {item.size}'
+                print(drink_msg)
+
 

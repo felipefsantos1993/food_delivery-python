@@ -17,8 +17,7 @@ super_burger.get_assesment('Manu', 5)
 super_burger.get_assesment('Lu', 4.5)
 
 def main():
-    print(orange_juice)
-    print(hamburger)
+    super_burger.menu_list
 
 if __name__ == '__main__':
     main()
