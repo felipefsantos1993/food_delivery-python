@@ -1,4 +1,5 @@
 from models.assessments import Assessments
+from models.menu.item import Item
 
 class Restaurants:
     """..."""
@@ -52,6 +53,7 @@ class Restaurants:
     # def get_food_on_menu(self, food):
     #     self._menu.append(food)
 
-    def add_menu(sel):
-        pass
+    def add_menu(self, item):
+        if isinstance(item, Item):
+            self._menu.append(item)
 
