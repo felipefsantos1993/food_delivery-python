@@ -53,11 +53,14 @@ class Restaurants:
     
     @property
     def menu_list(self):
-        print(f'{self._name} menu:\n')
+        print(f'{self._name} Menu:\n')
         for i, item in enumerate(self._menu, start=1):
             if hasattr(item, 'description'):
                 food_msg = f'{i}. {item._name} | {item._price} | {item.description}'
                 print(food_msg)
+            elif hasattr(item, 'type'):
+                dessert_msg = f'{i}. {item._name} | {item._price} | {item.type}'
+                print(dessert_msg)
             else:
                 drink_msg = f'{i}. {item._name} | {item._price} | {item.size}'
                 print(drink_msg)
